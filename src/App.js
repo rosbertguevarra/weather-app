@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Banner from "./component/Banner";
 import axios from "axios";
-import { throwStatement } from "@babel/types";
+import WeatherList from "./component/WeatherList";
 
 export default class App extends Component {
   state = {
@@ -21,6 +21,10 @@ export default class App extends Component {
     const response = await axios.get(
       `http://api.apixu.com/v1/current.json?key=${API_KEY}&q=${this.state.term}`
     );
+    const { current, location } = response.data;
+    this.setState({
+      data: [{ ...current, ...location }]
+    });
   };
 
   render() {
@@ -35,7 +39,7 @@ export default class App extends Component {
           />
           <a className="button is-primary">Search</a>
         </form>
-        {this.state.term}
+        <WeatherList list={this.state.data} />
       </div>
     );
   }
