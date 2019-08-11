@@ -6,7 +6,8 @@ import WeatherList from "./component/WeatherList";
 export default class App extends Component {
   state = {
     term: "",
-    data: []
+    data: [],
+    loading: false
   };
   initMap = () => {
     console.log("dasfsf");
@@ -18,7 +19,16 @@ export default class App extends Component {
     });
   };
 
+  renderList = () => {
+    if (this.state.loading) {
+      return <div className="lds-hourglass" />;
+    } else {
+      return <WeatherList list={this.state.data} />;
+    }
+  };
+
   onSearchSubmit = async e => {
+    this.setState({ loading: true });
     e.preventDefault();
     const API_KEY = "f71a7c04711f43c9ba0122253190804";
     const response = await axios.get(
@@ -27,7 +37,8 @@ export default class App extends Component {
 
     const { current, location } = response.data;
     this.setState({
-      data: [{ ...current, ...location }]
+      data: [{ ...current, ...location }],
+      loading: false
     });
     this.setState({
       term: ""
@@ -46,7 +57,7 @@ export default class App extends Component {
           />
           <button className="button is-primary">Search</button>
         </form>
-        <WeatherList list={this.state.data} />
+        {this.renderList()}
       </div>
     );
   }
