@@ -21,9 +21,13 @@ export default class App extends Component {
     const response = await axios.get(
       `http://api.apixu.com/v1/current.json?key=${API_KEY}&q=${this.state.term}`
     );
+
     const { current, location } = response.data;
     this.setState({
       data: [{ ...current, ...location }]
+    });
+    this.setState({
+      term: ""
     });
   };
 
@@ -37,7 +41,7 @@ export default class App extends Component {
             type="text"
             placeholder="Search for a City"
           />
-          <a className="button is-primary">Search</a>
+          <button className="button is-primary">Search</button>
         </form>
         <WeatherList list={this.state.data} />
       </div>

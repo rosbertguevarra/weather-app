@@ -18,6 +18,7 @@
 
 .form-input {
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .form-input input {
@@ -27,5 +28,42 @@
 
 .form-input .button {
   margin-left: 20px;
-  padding: 10px 15px 10px 15px;
+  padding: 5px 15px 10px 15px;
+}
+
+.weather {
+  display: block;
+  margin: 0 auto;
+  color: white;
+  background: #34495e;
+  padding: 0px 0px 400px 0px;
+  width: 60%;
+  opacity: 0.9;
+}
+.degrees {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 40px;
+  color: #2ecc71;
+}
+
+.city {
+  font-size: 36px;
+  margin: 10px 10px;
+  font-family: "Bree Serif", serif;
+  text-align: center;
+}
+
+.weather h3 {
+  text-align: center;
+}
+
+.weather-conditions {
+  display: block;
+  text-align: center;
+}
+
+.weather-conditions i {
+  /* display: block; */
+  margin: 8px;
 }
