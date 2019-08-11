@@ -8,6 +8,9 @@ export default class App extends Component {
     term: "",
     data: []
   };
+  initMap = () => {
+    console.log("dasfsf");
+  };
 
   onChange = e => {
     this.setState({

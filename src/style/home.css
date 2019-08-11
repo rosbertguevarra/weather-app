@@ -36,14 +36,14 @@
   margin: 0 auto;
   color: white;
   background: #34495e;
-  padding: 0px 0px 400px 0px;
+  padding: 0px 0px 60px 0px;
   width: 60%;
   opacity: 0.9;
 }
 .degrees {
   text-align: center;
   font-weight: bolder;
-  font-size: 40px;
+  font-size: 70px;
   color: #2ecc71;
 }
 
@@ -66,4 +66,15 @@
 .weather-conditions i {
   /* display: block; */
   margin: 8px;
+}
+
+.weather-image img {
+  display: block;
+  margin: 0 auto;
+  width: 40%;
+}
+
+.weather-image h3 {
+  font-family: "Acme", sans-serif;
+  font-size: 40px;
 }

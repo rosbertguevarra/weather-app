@@ -18,6 +18,10 @@ const Weather = props => {
         <i className="wi wi-humidity"> humidity: {props.humidity} </i>
         <i className="wi wi-windy"> Wind: {props.wind_mph} MPH </i>
       </span>
+      <div className="weather-image">
+        <img src={props.condition.icon} alt="weather" />
+        <h3>{props.condition.text}</h3>
+      </div>
     </div>
   );
 };
