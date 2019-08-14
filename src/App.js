@@ -9,9 +9,6 @@ export default class App extends Component {
     data: [],
     loading: false
   };
-  initMap = () => {
-    console.log("dasfsf");
-  };
 
   onChange = e => {
     this.setState({
