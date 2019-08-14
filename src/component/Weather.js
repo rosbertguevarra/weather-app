@@ -2,7 +2,6 @@ import React from "react";
 import "../style/home.css";
 
 const Weather = props => {
-  console.log(props);
   return (
     <div className="weather">
       <h1 className="degrees">{props.temp_c} &#8451;</h1>
